@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default class FeedbackRight extends React.Component {
+class FeedbackComments extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state={
-            comments:[{
+        this.state = {
+            comments: [{
                 person: 'André Freitas',
                 text: '“Muito deliciosa sua comida!<br/>Estou recomendando pra geral...”'
-            },{
+            }, {
                 person: 'Warlley Rodrigues',
                 text: '“Ei, estou gostando muito da sua comida.<br/>Parabéns!” '
             }],
@@ -19,20 +19,20 @@ export default class FeedbackRight extends React.Component {
     onPrevious() {
 
         let actual = this.state.actual + 1;
-        if(actual > this.state.comments.length) {
+        if (actual > this.state.comments.length) {
             actual = 0;
         }
-        this.setState({actual: actual});
+        this.setState({ actual: actual });
 
     }
 
     onNext() {
 
         let actual = this.state.actual - 1;
-        if(actual < 0) {
-            actual = this.state.comments.length-1;
+        if (actual < 0) {
+            actual = this.state.comments.length - 1;
         }
-        this.setState({actual: actual});
+        this.setState({ actual: actual });
 
     }
 
@@ -50,7 +50,7 @@ export default class FeedbackRight extends React.Component {
                 </div>
 
                 <p className="s-description">
-                    <span dangerouslySetInnerHTML={{__html: comment.text}}></span>
+                    <span dangerouslySetInnerHTML={{ __html: comment.text }}></span>
                     <br /> <br />
                     <strong className="testimonial-person">{comment.person}</strong>
                 </p>
@@ -71,3 +71,16 @@ export default class FeedbackRight extends React.Component {
     }
 
 }
+
+function Feedback() {
+    return (
+        <article className="s-region s-region-middle">
+            <div className="s-left s-ballon">
+                <i className="material-icons">feedback</i>
+            </div>
+            <FeedbackComments />
+        </article>
+    );
+}
+
+export default Feedback;

@@ -1,17 +1,19 @@
 import React from 'react';
 
-import Testeira from '../testeira/Testeira';
-import HContent from '../hcontent/HContent';
+import TContent from './TContent';
+import HContent from './HContent';
 
 function Header() {
-  
-    return(
-      <header>
-          <Testeira />
-          <HContent />
-      </header>
-    );
-  
-  }
 
-  export default Header;
+  return (
+    <header>
+      <div className="testeira">
+        <TContent />
+      </div>
+      <HContent />
+    </header>
+  );
+
+}
+
+export default Header;
