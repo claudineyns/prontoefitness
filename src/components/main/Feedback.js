@@ -12,33 +12,29 @@ class FeedbackComments extends React.Component {
                 person: 'Warlley Rodrigues',
                 text: '“Ei, estou gostando muito da sua comida.<br/>Parabéns!” '
             }],
-            actual: 0
+            current: 0
         };
     }
 
-    onPrevious() {
-
-        let actual = this.state.actual + 1;
-        if (actual > this.state.comments.length) {
-            actual = 0;
+    onPrevious = () => {
+        let current = (this.state.current - 1);
+        if (current < 0) {
+            current = (this.state.comments.length - 1);
         }
-        this.setState({ actual: actual });
+        this.setState({ current: current });
+    };
 
-    }
-
-    onNext() {
-
-        let actual = this.state.actual - 1;
-        if (actual < 0) {
-            actual = this.state.comments.length - 1;
+    onNext = () => {
+        let current = (this.state.current + 1);
+        if (current === this.state.comments.length) {
+            current = 0;
         }
-        this.setState({ actual: actual });
-
-    }
+        this.setState({ current: current });
+    };
 
     render() {
 
-        const comment = this.state.comments[this.state.actual];
+        const comment = this.state.comments[this.state.current];
 
         return (
 
