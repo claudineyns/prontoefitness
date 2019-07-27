@@ -1,7 +1,7 @@
 import React from 'react';
 import Feedback from './Feedback';
 import atendimento from '../../images/atendimento.png';
-import person from '../../images/person3.jpg';
+import person from '../../images/person4.jpg';
 
 class Presentation extends React.Component {
 
