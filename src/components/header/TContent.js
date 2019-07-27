@@ -11,11 +11,11 @@ function TextLink(props) {
 }
 
 function WhatsappItem() {
-  const title = 'prontoe_fitness';
-  const link = 'https://www.instagram.com/prontoe_fitness/';
+  const title = '(92) 98105-3211';
+  const link = 'https://api.whatsapp.com/send?phone=5592981053211';
   return (
     <div className="t-item ts">
-      <i className="fab fa-instagram t-icon"></i>
+      <i className="fab fa-whatsapp t-icon"></i>
       <TextLink link={link} label={title} />
     </div>
   );
